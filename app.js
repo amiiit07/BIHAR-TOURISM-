@@ -4,10 +4,13 @@ const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const dotenv = require('dotenv');
-dotenv.config();
+const cors=require('cors')
+const env = require('dotenv');
+env.config();
 
-
+const db_url = process.env.MONGO_URL;
+// console.log(db_url)
+const port = process.env.PORT
 
 // Routes
 const destinationRoutes = require('./routes/destinations');
@@ -19,20 +22,26 @@ const cuisineRoute = require('./routes/cuisine');
 // const passport = require('passport');
 // require('./config/passport')(passport);
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/bihartourism', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
 
 // Middleware
+app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
+
+
+
+// MongoDB Connection
+mongoose.connect(db_url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("MongoDB Connected"))
+.catch((err) => console.log(err));
+
 
 // SESSION + PASSPORT SETUP (if you use it)
 // app.use(require('express-session')({
@@ -80,6 +89,6 @@ app.use((err, req, res, next) => {
 });
 
 // Server Start
-app.listen(3000, () => {
-    console.log('Server started on http://localhost:3000');
+app.listen(port, () => {
+    console.log(`server is connected on port ${port}`);
 });
