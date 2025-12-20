@@ -1,0 +1,102 @@
+<%- include('../partials/header') %>
+
+<div class="place-detail">
+  <div class="card">
+    <img src="/images/patna-sahib.jpeg" alt="Patna Sahib Gurudwara" class="place-img" />
+    <div class="info">
+      <h2 class="title">TAKHT SRI PATNA SAHIB</h2>
+      <p class="desc">
+        Takht Sri Patna Sahib, also known as **Harmandir Sahib, Patna**, is one of the five holiest Takhts (thrones) in Sikhism. 
+        Located in **Patna, Bihar**, it marks the birthplace of **Guru Gobind Singh Ji**, the 10th Sikh Guru, born in 1666.
+      </p>
+      <p class="desc">
+        This grand gurudwara was built by **Maharaja Ranjit Singh** in the 18th century. It houses ancient relics of Guru Gobind Singh Ji, including his weapons and sacred scriptures.
+      </p>
+      <p class="desc">
+        Patna Sahib is a spiritual and architectural marvel that attracts lakhs of pilgrims and tourists from around the world. 
+        The peaceful kirtan, langar (community kitchen), and holy sarovar (pond) add to the divinity of this sacred space.
+      </p>
+
+      <!-- Map Card -->
+      <div class="map-card">
+        <h3>📍 Location Map</h3>
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24852.162571874756!2d85.22365263908429!3d25.584191789946676!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed586fffffffff%3A0x4ce78ec58719403d!2sTakhat%20Shri%20Harimandir%20Ji%20Patna%20Sahib!5e0!3m2!1sen!2sin!4v1753675115193!5m2!1sen!2sin" 
+          width="100%" 
+          height="300" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .place-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+    min-height: 100vh;
+  }
+  .card {
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .place-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  .title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .desc {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .back-btn {
+    background-color: #ff5f5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  .back-btn:hover {
+    background-color: #e53d3d;
+  }
+
+  .map-card {
+    margin-top: 30px;
+  }
+
+  .map-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #222;
+  }
+</style>
+
+<%- include('../partials/footer') %>

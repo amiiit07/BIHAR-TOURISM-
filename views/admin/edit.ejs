@@ -1,0 +1,8 @@
+<h2>Edit Destination</h2>
+<form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+    <input name="name" value="<%= destination.name %>" required>
+    <input name="location" value="<%= destination.location %>" required>
+    <input name="image" value="<%= destination.image %>" required>
+    <textarea name="description" required><%= destination.description %></textarea>
+    <button type="submit">Update</button>
+</form>

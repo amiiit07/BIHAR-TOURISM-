@@ -1,0 +1,358 @@
+/* Add your styles here */
+
+/* Importing Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+  background: url('/images/bg-bihar.jpg') no-repeat center center/cover;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.glass-card {
+  width: 300px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: black;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+}
+
+.glass-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-content a {
+  margin-top: 1rem;
+  display: inline-block;
+  color: red;
+  text-decoration: underline;
+}
+
+/* */
+.tour-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tour-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+}
+
+/* Custom red border on all sides */
+.border-custom {
+  border: 3px solid #f8d7da; /* Light red border */
+}
+
+/* Optional enhancement */
+.card-title {
+  color: #b30000;
+}
+
+@media (max-width: 768px) {
+  .tour-card {
+    margin: 15px;
+  }
+}
+
+/* Navbar Base Styles */
+
+/* Footer Navbar Styling */
+.footer-navbar {
+  background: rgba(255, 255, 255, 0.2); /* soft transparent white */
+  backdrop-filter: blur(3px); /* glass effect */
+  padding: 15px 0;
+  margin-top: 3px;
+  border-top: 2px light #fff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-links li a {
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-nav-links li a:hover {
+  background-color: #ff4d6d;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+  .footer-nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.bihar-places-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #c0392b;
+}
+
+.bihar-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.bihar-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 260px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bihar-card:hover {
+  transform: scale(1.05);
+}
+
+.bihar-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.bihar-card h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.bihar-card p {
+  margin: 0 10px 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.nitish-kumar-section {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.nitish-title {
+  font-size: 1.8rem;
+  color: #2e4053;
+}
+
+.nitish-photo {
+  width: 200px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.nitish-desc {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* culture section */
+.culture-section {
+  background: #fff2e6;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.culture-section h2 {
+  color: #cc3300;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.culture-section p.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.culture-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.culture-card {
+  background: #fff;
+  border-radius: 20px;
+  width: 260px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.culture-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.culture-card img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.culture-card h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.culture-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* cuisine section */
+.cuisine-section {
+  padding: 60px 20px;
+  background-color: #fff9f2;
+  text-align: center;
+}
+
+.cuisine-section h2 {
+  color: #b1450d;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cuisine-section .subtitle {
+  color: #444;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.cuisine-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.cuisine-card {
+  width: 260px;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cuisine-card:hover {
+  transform: translateY(-10px);
+}
+
+.cuisine-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cuisine-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.cuisine-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* footer section */
+.site-footer {
+  background: #ccffe6;
+  color: #0345fc;
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social a {
+  color: #fc0303;
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #42f2f5;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+
+

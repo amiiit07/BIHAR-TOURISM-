@@ -1,0 +1,103 @@
+<%- include('../partials/header') %>
+
+<div class="place-detail">
+  <div class="card">
+    <img src="/images/glass-bridge.jpeg" alt="Rajgir Glass Bridge" class="place-img" />
+    <div class="info">
+      <h2 class="title">RAJGIR GLASS BRIDGE</h2>
+      <p class="desc">
+        The Rajgir Glass Bridge is a thrilling tourist attraction located in the scenic hills of Rajgir, Bihar. 
+        Inspired by the famous Zhangjiajie Glass Bridge in China, it offers breathtaking views of the lush greenery and the valleys below.
+      </p>
+      <p class="desc">
+        Suspended at a height of around **200 feet**, the bridge is made of **see-through toughened glass**, allowing visitors to walk "in the air". 
+        It has quickly become one of the most visited adventure spots in Bihar.
+      </p>
+      <p class="desc">
+        Located inside the **Nature Safari Park**, the Glass Bridge is part of a larger eco-tourism initiative that also includes **zip-lining, archery, wall climbing, and more**. 
+        The site is especially popular among youth and families looking for an exciting escape into nature.
+      </p>
+
+      <!-- Map Card -->
+      <div class="map-card">
+        <h3>📍 Location Map</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.3987130743667!2d85.42349431481057!3d25.012210483987616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f2fff7d6d37c6d%3A0x3201e422db98822c!2sNature%20Safari%2C%20Rajgir!5e0!3m2!1sen!2sin!4v1659389762643!5m2!1sen!2sin" 
+          width="100%" 
+          height="300" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .place-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+    min-height: 100vh;
+  }
+  .card {
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .place-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  .title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .desc {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .back-btn {
+    background-color: #ff5f5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  .back-btn:hover {
+    background-color: #e53d3d;
+  }
+
+  .map-card {
+    margin-top: 30px;
+  }
+
+  .map-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #222;
+  }
+</style>
+
+<%- include('../partials/footer') %>

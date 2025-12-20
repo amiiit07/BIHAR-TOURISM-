@@ -1,0 +1,16 @@
+<h2>Search Results for "<%= query %>"</h2>
+
+<% if (results.length > 0) { %>
+  <div class="bihar-card-wrapper">
+    <% results.forEach(place => { %>
+      <div class="bihar-card">
+        <img src="<%= place.image %>" alt="<%= place.name %>">
+        <h3><%= place.name %></h3>
+        <p><%= place.description %></p>
+        <a href="/places/<%= place._id %>">Read More</a>
+      </div>
+    <% }) %>
+  </div>
+<% } else { %>
+  <p>No results found for "<%= query %>"</p>
+<% } %>

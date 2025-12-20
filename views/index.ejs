@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BIHAR TOURISM</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <nav class="footer-navbar d-flex justify-content-between align-items-center px-4 py-2 bg-light shadow">
+    <ul class="footer-nav-links list-unstyled d-flex gap-4 m-0 align-items-center">
+      <li><a href="/"> Home </a></li>
+      <li><a href="/destinations">Places</a></li>
+      <li><a href="/culture">Culture</a></li>
+      <li><a href="/cuisine">Cuisine</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-item">
+  <a class="nav-link" href="/safety">Emergency contacts</a>
+</li>
+
+      
+    </ul>
+  </nav>
+
+  <div class="container mt-1">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center tour-card">
+          <div class="card-header bg-light">
+            <h2 class="text-danger fw-bold">BIHAR MEANS HEAVEN</h2>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Uncover the Heart of India</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional content. Visit historical sites, explore rich culture, and taste authentic Bihari cuisine.
+            </p>
+            <a href="/welcome" class="btn btn-outline-danger">WELCOME TO BIHAR</a>
+          </div>
+          <div class="card-footer text-muted">
+            <b><a href="/destinations/admin">Admin Panel</a></b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bihar-places-section">
+    <h2 class="bihar-places-title"><b>Discover Bihar's Heritage and Beauty</b></h2>
+    <div class="bihar-card-wrapper">
+      <div class="bihar-card">
+        <img src="/images/mahabodhi.jpg" alt="Mahabodhi Temple">
+        <h3>Mahabodhi Temple</h3>
+        <p>Bodh Gaya – A UNESCO World Heritage Site and a pilgrimage destination.</p>
+        <a href="/places/mahabodhi-temple">Read More</a>
+      </div>
+      <div class="bihar-card">
+        <img src="/images/nalanda.jpg" alt="Nalanda University">
+        <h3>Nalanda University</h3>
+        <p>Ancient university and a center of learning from the 5th century.</p>
+        <a href="/places/nalanda-university">Read More</a>
+      </div>
+      <div class="bihar-card">
+        <img src="/images/vishnupad.jpeg" alt="Vishnupad Temple">
+        <h3>Vishnupad Temple</h3>
+        <p>Located in Gaya, known for its sacred footprint of Lord Vishnu.</p>
+        <a href="/places/vishnupad-temple">Read More</a>
+      </div>
+      <div class="bihar-card">
+        <img src="/images/rajgir-bridge.jpeg" alt="Glass Bridge">
+        <h3>Glass Bridge</h3>
+        <p>A thrilling experience at Rajgir hills, great for adventure seekers.</p>
+        <a href="/places/glass-bridge">Read More</a>
+      </div>
+      <div class="bihar-card">
+        <img src="/images/patna-sahib.jpeg" alt="Patna Sahib Gurudwara">
+        <h3>Patna Sahib</h3>
+        <p>One of the five Takhts of Sikhism, birthplace of Guru Gobind Singh Ji.</p>
+        <a href="/places/patna-sahib">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nitish-kumar-section">
+    <h2 class="nitish-title">Chief Minister of Bihar</h2>
+    <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar" class="nitish-photo">
+    <p class="nitish-desc">Mr. Nitish Kumar has contributed significantly to the development and growth of Bihar.</p>
+  </div>
+
+  <%- include("partials/footer") %>
+</body>
+</html>
