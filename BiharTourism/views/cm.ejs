@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chief Minister of Bihar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    
+
+    <section class="cm-section">
+
+        <h1 class="cm-title">Chief Minister of Bihar</h1>
+
+        <div class="cm-card">
+            <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar">
+
+            <h2>Mr. Nitish Kumar</h2>
+
+            <p>
+                Nitish Kumar has played a significant role in transforming Bihar.  
+                His efforts in infrastructure, education, women empowerment, and law & order  
+                have reshaped the future of the state.
+            </p>
+
+            <a href="https://en.wikipedia.org/wiki/Nitish_Kumar" target="_blank" class="cm-btn">
+                Read Full Biography
+            </a>
+        </div>
+
+    </section>
+
+    <%- include('partials/footer') %>
+
+    <style>
+        .cm-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cm-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cm-card {
+    width: 80%;
+    max-width: 700px;
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.cm-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.cm-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff4141;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.cm-btn:hover {
+    background: #d83636;
+}
+
+    </style>
+
+</body>
+
+</html>

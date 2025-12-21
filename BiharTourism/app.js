@@ -18,9 +18,12 @@ const placeRoutes = require('./routes/places');
 const cultureRoute = require('./routes/culture');
 const cuisineRoute = require('./routes/cuisine');
 
-// Optional: If you're using Passport
-// const passport = require('passport');
-// require('./config/passport')(passport);
+//cm routes
+const cmRoute = require("./routes/cm");  // import
+
+app.use("/cm", cmRoute);  
+
+
 
 
 // Middleware
@@ -43,14 +46,7 @@ mongoose.connect(db_url, {
 .catch((err) => console.log(err));
 
 
-// SESSION + PASSPORT SETUP (if you use it)
-// app.use(require('express-session')({
-//     secret: 'secretkey',
-//     resave: false,
-//     saveUninitialized: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+
 
 // ✅ Global Variables Middleware
 app.use((req, res, next) => {
