@@ -7,43 +7,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
-  <nav class="footer-navbar d-flex justify-content-between align-items-center px-4 py-2 bg-light shadow">
-    <ul class="footer-nav-links list-unstyled d-flex gap-4 m-0 align-items-center">
-      <li><a href="/"> Home </a></li>
+ <nav class="main-navbar">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <a href="/" class="nav-logo">BIHAR TOURISM</a>
+
+    <!-- Links -->
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
       <li><a href="/destinations">Places</a></li>
       <li><a href="/culture">Culture</a></li>
       <li><a href="/cuisine">Cuisine</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="nav-item">
-  <a class="nav-link" href="/safety">Emergency contacts</a>
-</li>
+      <li><a href="/safety">Emergency Contacts</a></li>
+    </ul>
+
+    <!-- Dark Mode Toggle -->
+    <span id="themeToggle" class="theme-toggle">🌙</span>
+
+    <!-- Mobile Menu Button -->
+    <div class="menu-btn" id="menuBtn">☰</div>
+  </div>
+</nav>
+
 
       
     </ul>
   </nav>
 
-  <div class="container mt-1">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card text-center tour-card">
-          <div class="card-header bg-light">
-            <h2 class="text-danger fw-bold">BIHAR MEANS HEAVEN</h2>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title fw-semibold">Uncover the Heart of India</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional content. Visit historical sites, explore rich culture, and taste authentic Bihari cuisine.
-            </p>
-            <a href="/welcome" class="btn btn-outline-danger">WELCOME TO BIHAR</a>
-          </div>
-          <div class="card-footer text-muted">
-            <b><a href="/destinations/admin">Admin Panel</a></b>
-          </div>
+ <section class="hero-container">
+    <div class="hero-main-card animate fade-up">
+
+        <!-- LEFT IMAGE / MAP -->
+        <div class="hero-left">
+            <img src="/images/bihar-map.jpg" alt="Bihar Map" class="bihar-map-img">
         </div>
-      </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="hero-right">
+            <div class="hero-icon">🌟</div>
+
+            <h1 class="hero-title">BIHAR MEANS HEAVEN</h1>
+            <p class="hero-subtitle">Uncover The Heart of India</p>
+
+            <p class="hero-desc">
+                Explore historical wonders, rich culture, spiritual sites and the warm
+                hospitality of Bihar.
+            </p>
+
+            <a href="/welcome" class="hero-btn">WELCOME TO BIHAR →</a>
+        </div>
+
     </div>
-  </div>
+</section>
+
+
+
+
+  
+
+
 
   <div class="bihar-places-section">
     <h2 class="bihar-places-title"><b>Discover Bihar's Heritage and Beauty</b></h2>
@@ -81,12 +107,71 @@
     </div>
   </div>
 
-  <div class="nitish-kumar-section">
-    <h2 class="nitish-title">Chief Minister of Bihar</h2>
-    <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar" class="nitish-photo">
-    <p class="nitish-desc">Mr. Nitish Kumar has contributed significantly to the development and growth of Bihar.</p>
-  </div>
+ <div class="cm-card-wrapper">
+    <div class="cm-glass-card">
+
+        <h2 class="cm-title">Chief Minister of Bihar</h2>
+
+        <div class="cm-img-container">
+            <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar" class="cm-img">
+
+            <button class="cm-overlay-btn" onclick="window.location.href='/cm'">
+                View Profile →
+            </button>
+        </div>
+
+        <p class="cm-desc">
+            Mr. Nitish Kumar has contributed significantly to the development and growth of Bihar.
+        </p>
+    </div>
+</div>
+
 
   <%- include("partials/footer") %>
+  <script>
+// Mobile Menu
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.onclick = () => {
+  navLinks.classList.toggle("show");
+};
+
+// Dark Mode
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("mode") === "dark"){
+  document.body.classList.add("dark-mode");
+  toggle.textContent = "☀️";
+}
+
+toggle.onclick = () => {
+  document.body.classList.toggle("dark-mode");
+
+  if(document.body.classList.contains("dark-mode")){
+    localStorage.setItem("mode","dark");
+    toggle.textContent = "☀️";
+  } else {
+    localStorage.setItem("mode","light");
+    toggle.textContent = "🌙";
+  }
+};
+
+//hero section
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add("show"); }
+  });
+});
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+
+
+
+
+
+
+</script>
+
 </body>
 </html>

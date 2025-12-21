@@ -2,82 +2,173 @@
 <html lang="en">
 <head>
     <title>Chief Minister of Bihar</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cm.css">
 </head>
-
 <body>
 
     
 
-    <section class="cm-section">
+    <!-- HERO -->
+    <section class="cm-hero">
+        <div class="cm-hero-content">
+            <h1>Chief Minister of Bihar</h1>
+            <p>Leadership • Vision • Transformation</p>
+        </div>
+    </section>
 
-        <h1 class="cm-title">Chief Minister of Bihar</h1>
-
+    <!-- PROFILE CARD -->
+    <section class="cm-profile">
         <div class="cm-card">
-            <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar">
-
+            <img src="/images/cm-nitish-kumar.jpeg" class="cm-img">
             <h2>Mr. Nitish Kumar</h2>
-
-            <p>
-                Nitish Kumar has played a significant role in transforming Bihar.  
-                His efforts in infrastructure, education, women empowerment, and law & order  
-                have reshaped the future of the state.
+            <p class="profile-desc">
+                Nitish Kumar has transformed Bihar with major reforms in education, 
+                infrastructure, law & order, women empowerment, and digital governance.
             </p>
 
-            <a href="https://en.wikipedia.org/wiki/Nitish_Kumar" target="_blank" class="cm-btn">
-                Read Full Biography
+            <a href="https://currentaffairs.adda247.com/nitish-kumar-biography/" target="_blank" class="cm-btn">
+                Read Full Biography →
             </a>
         </div>
+    </section>
 
+    <!-- ANIMATED STATS -->
+    <section class="stats-section">
+        <div class="stat-box">
+            <h2 class="counter" data-target="20">0</h2>
+            <p>Years in Service</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="150">0</h2>
+            <p>Major Projects</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="45">0</h2>
+            <p>Awards & Honors</p>
+        </div>
+    </section>
+
+    <!-- BIOGRAPHY TIMELINE -->
+    <section class="timeline-section">
+        <h2>Biography Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="year">1951</div>
+                <p>Born in Bakhtiyarpur, Bihar.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">1974</div>
+                <p>Joined Jayaprakash Narayan's movement ("JP Movement").</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2000</div>
+                <p>Became the Chief Minister of Bihar for the first time.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2005 - Present</div>
+                <p>Reelected multiple times and led major reforms in the state.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PHOTO SLIDER -->
+    <section class="slider-section">
+        <h2>Photo Gallery</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="/images/cm1.jpg" alt="">
+                <img src="/images/cm2.jpg" alt="">
+                <img src="/images/cm3.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- MINISTERS GALLERY -->
+    <section class="minister-section">
+        <h2>Cabinet Ministers</h2>
+
+        <div class="minister-grid">
+
+            <div class="minister-card">
+                <img src="/images/min1.jpg">
+                <h3>Tejashwi Yadav</h3>
+                <p>Deputy Chief Minister</p>
+            </div>
+
+            <div class="minister-card">
+                <img src="/images/min2.jpg">
+                <h3>Vijay Kumar Choudhary</h3>
+                <p>Finance Minister</p>
+            </div>
+
+            <div class="minister-card">
+                <img src="/images/min3.jpg">
+                <h3>Ashok Choudhary</h3>
+                <p>Education Minister</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENT CARDS -->
+    <section class="achievements">
+        <h2>Major Achievements</h2>
+
+        <div class="achieve-grid">
+
+            <div class="ach-card">
+                <h3>Women Reservation</h3>
+                <p>50% reservation in Panchayat elections.</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>Student Credit Card</h3>
+                <p>Financial support for higher education.</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>Law & Order</h3>
+                <p>Strong improvement in safety & crime control.</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>Infrastructure</h3>
+                <p>High-speed roads, bridges, and connectivity.</p>
+            </div>
+
+        </div>
     </section>
 
     <%- include('partials/footer') %>
 
-    <style>
-        .cm-section {
-    text-align: center;
-    padding: 50px 20px;
-}
+    <!-- COUNTER SCRIPT -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            let target = +counter.getAttribute('data-target');
+            let count = 0;
+            let step = target / 200;
 
-.cm-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.cm-card {
-    width: 80%;
-    max-width: 700px;
-    background: white;
-    margin: auto;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-}
-
-.cm-card img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.cm-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #ff4141;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.cm-btn:hover {
-    background: #d83636;
-}
-
-    </style>
+            function updateCounter() {
+                if (count < target) {
+                    count += step;
+                    counter.innerText = Math.floor(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+            updateCounter();
+        });
+    </script>
 
 </body>
-
 </html>

@@ -19,8 +19,7 @@ const cultureRoute = require('./routes/culture');
 const cuisineRoute = require('./routes/cuisine');
 
 //cm routes
-const cmRoute = require("./routes/cm");  // import
-
+const cmRoute = require("./routes/cm");  
 app.use("/cm", cmRoute);  
 
 
