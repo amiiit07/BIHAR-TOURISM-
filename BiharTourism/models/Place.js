@@ -1,16 +1,4 @@
-// const mongoose = require('mongoose');
 
-
-// const Place = mongoose.models.Place || mongoose.model('Place', new mongoose.Schema({
-//   name: String,
-//   location: String,
-//   description: String,
-//   image: String
-// }));
-
-
-
-// module.exports = Place;
 const mongoose = require('mongoose');
 
 const placeSchema = new mongoose.Schema({
