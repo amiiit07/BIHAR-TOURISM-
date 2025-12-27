@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const Destination = require('./models/Destination');
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/bihartourism')
+// ⭐ Connect to Atlas instead of Local DB
+mongoose.connect('mongodb+srv://amit:amiiit07@cluster0.db9k61e.mongodb.net/bihartourism?retryWrites=true&w=majority')
     .then(() => {
-        console.log('MongoDB connected!');
+        console.log('MongoDB connected to ATLAS!');
     })
     .catch(err => {
         console.log('Connection error:', err);
     });
 
-// Destinations data
+// ⭐ Your destination data (same as before)
 const destinations = [
     {
         name: "Mahavir Mandir (Patna)",
@@ -146,26 +146,21 @@ const destinations = [
     }
 ];
 
-// Function to seed the database
+// ⭐ Seed Function
 async function seedDB() {
     try {
-        // Clear existing destinations
         await Destination.deleteMany({});
-        console.log("Existing destinations cleared.");
-        
-        // Insert new destinations
+        console.log("Old destinations cleared.");
+
         await Destination.insertMany(destinations);
-        console.log("Data Inserted Successfully!");
-        
-        // Close the connection
+        console.log("New destinations inserted into ATLAS!");
+
         mongoose.connection.close();
-        console.log("Database connection closed.");
-        
+        console.log("Atlas connection closed.");
     } catch (error) {
         console.error("Error seeding database:", error);
         mongoose.connection.close();
     }
 }
 
-// Run the seeding function
 seedDB();

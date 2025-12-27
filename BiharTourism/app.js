@@ -12,6 +12,8 @@ const db_url = process.env.MONGO_URL;
 // console.log(db_url)
 const port = process.env.PORT
 
+
+
 // Routes
 const destinationRoutes = require('./routes/destinations');
 const placeRoutes = require('./routes/places');
