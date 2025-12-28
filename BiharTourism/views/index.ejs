@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/adventure.css">
+
 </head>
 
 <body>
@@ -107,15 +109,16 @@
     </div>
   </div>
 
- <div class="cm-card-wrapper">
+                       <!--  cm section start in home page-->  
+<section class="cm-card-wrapper">
     <div class="cm-glass-card">
 
         <h2 class="cm-title">Chief Minister of Bihar</h2>
 
-        <div class="cm-img-container">
-            <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar" class="cm-img">
+        <div class="cm-full-img-container">
+            <img src="/images/cm-nitish-kumar.jpeg" alt="Nitish Kumar" class="cm-full-img">
 
-            <button class="cm-overlay-btn" onclick="window.location.href='/cm'">
+            <button class="cm-btn" onclick="window.location.href='/cm'">
                 View Profile →
             </button>
         </div>
@@ -124,7 +127,51 @@
             Mr. Nitish Kumar has contributed significantly to the development and growth of Bihar.
         </p>
     </div>
-</div>
+</section>
+<!--  cm section end-->           >
+
+<!--   ADVENTURE SECTION - INCREDIBLE INDIA STYLE  -->
+<!-- --------------------------------------------- -->
+
+<section class="adventure-section">
+  <h1 class="section-title">THRILLING ADVENTURES</h1>
+  <p class="section-subtitle">Experience the wild and exciting side of Bihar</p>
+
+  <div class="adventure-container">
+
+    <% adventures.forEach(adventure => { %>
+
+      <div class="adventure-card">
+        
+        <div class="adventure-image">
+          <img src="<%= adventure.image %>" alt="<%= adventure.title %>">
+        </div>
+
+        <div class="adventure-content">
+          <span class="adventure-location"><%= adventure.location %></span>
+          <h2 class="adventure-title"><%= adventure.title %></h2>
+        </div>
+
+      </div>
+
+    <% }) %>
+
+  </div>
+</section>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
   <%- include("partials/footer") %>

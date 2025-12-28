@@ -612,97 +612,135 @@ html {
 }
 
 
-/* CM PAGE STYLES */
+/* ----------------------------------- */
+/*      CM SECTION - PREMIUM UI        */
+/* ----------------------------------- */
 
-
-/* Wrapper Background */
+/* Transparent Background Wrapper */
 .cm-card-wrapper {
     display: flex;
     justify-content: center;
-    padding: 50px 20px;
-    background: linear-gradient(130deg, #ede9fe, #faf5ff);
+    padding: 60px 20px;
+    background: transparent;
+    backdrop-filter: blur(8px);
 }
 
-/* Glass Card */
+/* Glassmorphic CM Card (Title + Content Box) */
 .cm-glass-card {
     width: 90%;
-    max-width: 600px;
-    padding: 30px;
-    border-radius: 22px;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.4);
-    box-shadow: 0 8px 35px rgba(0,0,0,0.1);
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
     text-align: center;
+    transition: 0.35s ease;
+}
+
+/* Hover Lift */
+.cm-glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
 }
 
 /* Title */
 .cm-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #3b0764;
+    font-size: 2.7rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    text-shadow: 0 0 18px rgba(255,255,255,0.8),
+                 0 0 40px rgba(255,255,255,0.35);
 }
 
-/* Image Container */
-.cm-img-container {
+/* =============================== */
+/*      FULL CARD IMAGE SECTION    */
+/* =============================== */
+
+.cm-full-img-container {
     position: relative;
-    display: inline-block;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+    border-radius: 22px;
     overflow: hidden;
-    border-radius: 16px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
 }
 
-/* Image */
-.cm-img {
-    width: 300px;
-    height: 190px;
+/* Full Image */
+.cm-full-img {
+    width: 100%;
+    height: 330px;
     object-fit: cover;
-    border-radius: 16px;
-    transition: transform 0.4s ease;
+    border-radius: 22px;
+    transition: transform 0.45s ease;
 }
 
-/* Hover Zoom Effect */
-.cm-img-container:hover .cm-img {
+.cm-full-img-container:hover .cm-full-img {
     transform: scale(1.08);
 }
 
-/* Overlay Button */
-.cm-overlay-btn {
+/* Button - Hidden by default */
+.cm-btn {
     position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 18px;
-    background: rgba(126, 34, 206, 0.9);
-    color: #fff;
+    bottom: 18px;
+    right: 18px;
+    padding: 12px 22px;
+    background: rgba(255,255,255,0.9);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
+    color: #222;
     cursor: pointer;
+
     opacity: 0;
-    transition: 0.3s ease;
+    pointer-events: none;
+    transition: 0.35s ease;
 }
 
-/* Show Button on Hover */
-.cm-img-container:hover .cm-overlay-btn {
+/* Show only on hover */
+.cm-full-img-container:hover .cm-btn {
     opacity: 1;
-    transform: translateX(-50%) translateY(-3px);
+    pointer-events: auto;
+    transform: translateY(-4px);
 }
 
-/* Description Text */
+/* Disable old small image container */
+.cm-img-container,
+.cm-img {
+    display: none !important;
+}
+
+/* Description */
 .cm-desc {
-    font-size: 1.1rem;
-    margin-top: 18px;
-    color: #333;
+    margin-top: 10px;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
 /* Mobile Responsive */
-@media (max-width: 480px) {
-    .cm-img {
-        width: 100%;
-        height: 180px;
+@media (max-width: 600px) {
+
+    .cm-full-img {
+        height: 220px;
+    }
+
+    .cm-title {
+        font-size: 2rem;
+    }
+
+    .cm-glass-card {
+        padding: 28px;
     }
 }
-
-
 
