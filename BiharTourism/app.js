@@ -63,6 +63,28 @@ const adventures = [
     title: "Wildlife Safari", 
     location: "Valmiki Tiger Reserve", 
     image: "/images/adventure4.jpg" 
+  },
+  {
+    title: "Rajgir Glass Bridge", 
+    location: "Rajgir, Nalanda", 
+    image: "/images/adventure5.jpg"
+  },
+  {
+    title: "Asia’s Longest Ropeway Ride", 
+    location: "Rajgir, Nalanda", 
+    image: "/images/adventure6.jpg"
+  }
+  ,
+  {
+    title: "Bodh Gaya Hill Trek Experience", 
+    location: "Dungeshwari Hills, Gaya", 
+    image: "/images/adventure7.jpg"
+  }
+  ,
+  {
+    title: "Wild Jungle Trek", 
+    location: "Bhimbandh Wildlife Sanctuary, Munger", 
+    image: "/images/adventure8.jpg"
   }
 ];
 
