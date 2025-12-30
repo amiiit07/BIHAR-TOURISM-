@@ -39,21 +39,42 @@
       <li>Stay alert in crowded places and watch your belongings.</li>
       <li>Inform family/friends about your travel route.</li>
     </ul>
+    <div class="back-btn-wrapper">
     <a href="/" class="back-btn">← Back to Home</a>
+</div>
+
   <style>
+.back-btn-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
 .back-btn {
-    background-color: #ff5f5f;
+    background-color: #ff6b6b;
+    padding: 12px 22px;
     color: white;
-    padding: 10px 20px;
     border-radius: 8px;
+    font-size: 18px;
     text-decoration: none;
-    transition: background 0.3s;
-    margin-top: 20px;
+    font-weight: 500;
     display: inline-block;
-  }
-  .back-btn:hover {
-    background-color: #e53d3d;
-  }
-  </style>
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.back-btn:hover {
+    background-color: #ff4a4a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .back-btn {
+        width: 80%;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+}
+</style>
   </div>
 </div>

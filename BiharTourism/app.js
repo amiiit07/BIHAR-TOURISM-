@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express(); 
+const app = express();
 
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -44,48 +44,14 @@ mongoose.connect(db_url, {
 
 // ------------------- ADVENTURE DATA -------------------
 const adventures = [
-  { 
-    title: "Hot Air Balloon Ride", 
-    location: "Rajgir", 
-    image: "/images/adventure1.jpg" 
-  },
-  { 
-    title: "Kaimur Hills Trek", 
-    location: "Kaimur", 
-    image: "/images/adventure2.jpg" 
-  },
-  { 
-    title: "River Rafting", 
-    location: "Ganga, Patna", 
-    image: "/images/adventure3.jpg" 
-  },
-  { 
-    title: "Wildlife Safari", 
-    location: "Valmiki Tiger Reserve", 
-    image: "/images/adventure4.jpg" 
-  },
-  {
-    title: "Rajgir Glass Bridge", 
-    location: "Rajgir, Nalanda", 
-    image: "/images/adventure5.jpg"
-  },
-  {
-    title: "Asia’s Longest Ropeway Ride", 
-    location: "Rajgir, Nalanda", 
-    image: "/images/adventure6.jpg"
-  }
-  ,
-  {
-    title: "Bodh Gaya Hill Trek Experience", 
-    location: "Dungeshwari Hills, Gaya", 
-    image: "/images/adventure7.jpg"
-  }
-  ,
-  {
-    title: "Wild Jungle Trek", 
-    location: "Bhimbandh Wildlife Sanctuary, Munger", 
-    image: "/images/adventure8.jpg"
-  }
+  { title: "Hot Air Balloon Ride", location: "Rajgir", image: "/images/adventure1.jpg" },
+  { title: "Kaimur Hills Trek", location: "Kaimur", image: "/images/adventure2.jpg" },
+  { title: "River Rafting", location: "Ganga, Patna", image: "/images/adventure3.jpg" },
+  { title: "Wildlife Safari", location: "Valmiki Tiger Reserve", image: "/images/adventure4.jpg" },
+  { title: "Rajgir Glass Bridge", location: "Rajgir, Nalanda", image: "/images/adventure5.jpg" },
+  { title: "Asia’s Longest Ropeway Ride", location: "Rajgir, Nalanda", image: "/images/adventure6.jpg" },
+  { title: "Bodh Gaya Hill Trek Experience", location: "Dungeshwari Hills, Gaya", image: "/images/adventure7.jpg" },
+  { title: "Wild Jungle Trek", location: "Bhimbandh Wildlife Sanctuary, Munger", image: "/images/adventure8.jpg" }
 ];
 
 
@@ -100,13 +66,16 @@ app.use((req, res, next) => {
 
 // ------------------- ROUTES -------------------
 app.use('/places', placeRoutes);
-app.use('/destinations', destinationRoutes);
+app.use('/destinations', destinationRoutes);   // ⭐ IMPORTANT ROUTE (Details page works here)
 app.use('/culture', cultureRoute);
 app.use('/cuisine', cuisineRoute);
 app.use('/cm', cmRoute);
 app.use('/welcome', welcomeRoutes);
 app.use('/safety', safetyRoutes);
-app.use("/", seedRoute);
+//app.use("/", seedRoute);
+
+// ❌ REMOVE old mahavirmandir route
+// app.use('/mahavir-mandir-patna', mahavirmandirRoutes);
 
 
 // ------------------- STATIC PAGES -------------------

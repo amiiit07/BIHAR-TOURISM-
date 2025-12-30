@@ -1,17 +1,24 @@
 <%- include("partials/header") %>
+<link rel="stylesheet" href="/css/culture.css">
 
+<section class="culture-page">
 
 <section class="culture-section">
-  <h2>Cultural Heritage of Bihar</h2>
-  <p class="subtitle">Explore the traditions, festivals, arts, music, and cuisine of Bihar.</p>
+
+  <!-- Glass Header Box -->
+  <div class="culture-header glass-box">
+      <h2>Cultural Heritage of Bihar</h2>
+      <p class="subtitle">Discover Bihar’s timeless culture—spiritual roots, traditional arts, folk dances, and sweet delicacies that define its identity.</p>
+  </div>
 
   <div class="culture-cards">
+
     <div class="culture-card">
       <img src="/images/madhubani-art.jpeg" alt="Madhubani Art">
       <h3>Madhubani Art</h3>
       <p>Traditional Mithila painting style that reflects folk culture and rituals.</p>
     </div>
-    
+
     <div class="culture-card">
       <img src="/images/chhath.jpeg" alt="Chhath Puja">
       <h3>Chhath Puja</h3>
@@ -29,23 +36,15 @@
       <h3>Folk Dances</h3>
       <p>Traditional dances like Jat-Jatin, Bidesia, and Sohar performed during cultural events.</p>
     </div>
+
   </div>
-  <a href="/" class="back-btn">← Back to Home</a>
-  <style>
-.back-btn {
-    background-color: #ff5f5f;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-    margin-top: 20px;
-    display: inline-block;
-  }
-  .back-btn:hover {
-    background-color: #e53d3d;
-  }
-  </style>
+
+  <div class="back-btn-wrapper">
+    <a href="/" class="back-btn">← Back to Home</a>
+  </div>
+
+</section>
+
 </section>
 
 <%- include("partials/footer") %>

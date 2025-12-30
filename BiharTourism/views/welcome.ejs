@@ -4,25 +4,28 @@
   <title>Welcome to Bihar</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      height: auto;
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       flex-direction: column;
       text-align: center;
-      background: linear-gradient(135deg, #ff9933, #ffffff, #138808); /* Tricolor Gradient */
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
       font-family: 'Poppins', sans-serif;
       color: #222;
+      padding-bottom: 60px;
     }
+
     h1 {
       font-size: 4rem;
       font-family: 'Pacifico', cursive;
       animation: fadeIn 2s ease-in-out;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-      color: #ff6666; /* Light Red */
+      color: #ff6666;
     }
     p.tagline {
       font-size: 1.5rem;
@@ -30,17 +33,19 @@
       animation: fadeIn 3s ease-in-out;
       color: #333;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .btn {
       margin: 15px;
       padding: 12px 25px;
       font-size: 1.2rem;
       border: none;
       border-radius: 30px;
-      background: #004aad; /* Royal Blue Button */
+      background: #004aad;
       color: white;
       cursor: pointer;
       transition: 0.3s;
@@ -48,13 +53,102 @@
       display: inline-block;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
     }
+
     .btn:hover {
       background: #002f6c;
       transform: scale(1.1);
     }
+
+    /* ---------------- PHOTO GALLERY ---------------- */
+/* Photo Gallery Section */
+.photo-gallery {
+    margin-top: 50px;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #d40000;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Clean Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    justify-items: center;
+}
+
+/* Same size images */
+.gallery-grid img {
+    width: 100%;
+    height: 230px;         /* FIXED HEIGHT */
+    object-fit: cover;     /* crop but keep looking perfect */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Hover Effect */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gallery-grid { column-count: 2; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { column-count: 1; }
+    }
+
+    /* Back Button */
+    .back-btn {
+      background-color: #ff5f5f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .back-btn:hover {
+      background-color: #e53d3d;
+    }
   </style>
 </head>
+
 <body>
+
   <div>
     <h1>✨ Welcome to Bihar ✨</h1>
     <p class="tagline">Land of History, Culture & Spirituality</p>
@@ -64,22 +158,60 @@
     <a href="/cuisine" class="btn"><i class="fas fa-utensils"></i> Cuisine</a>
   </div>
 
+
+  <!-- ---------------- PHOTO GALLERY START ---------------- -->
+  <section class="photo-gallery">
+      <h2 class="gallery-title">📸 Glimpses of Bihar</h2>
+
+      <div class="gallery-grid">
+          <img src="/images/bihar1.jpg">
+          <img src="/images/bihar2.jpg">
+          <img src="/images/bihar3.jpg">
+          <img src="/images/bihar4.jpg">
+          <img src="/images/bihar5.jpg">
+          <img src="/images/bihar6.jpg">
+          <img src="/images/bihar7.jpg">
+          <img src="/images/bihar8.jpg">
+          <img src="/images/bihar9.jpg">
+          <img src="/images/bihar10.jpg">
+          <img src="/images/bihar11.jpg">
+          <img src="/images/bihar12.jpg">
+          <img src="/images/bihar13.jpg">
+          <img src="/images/bihar14.jpg">
+          <img src="/images/bihar15.jpg">
+          <img src="/images/bihar16.jpg">
+          <img src="/images/bihar17.jpg">
+          <img src="/images/bihar18.jpg">
+          <img src="/images/bihar19.jpg">
+          <img src="/images/bihar20.jpg">
+          <img src="/images/bihar21.jpg">
+          <img src="/images/bihar22.jpg">
+          <img src="/images/bihar23.jpg">
+
+          
+      </div>
+  </section>
+  <!-- ---------------- PHOTO GALLERY END ---------------- -->
+
+
+  <!-- Footer -->
   <%- include("partials/footer") %>
+
   <a href="/" class="back-btn">← Back to Home</a>
-  <style>
-.back-btn {
-    background-color: #ff5f5f;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-    margin-top: 20px;
-    display: inline-block;
-  }
-  .back-btn:hover {
-    background-color: #e53d3d;
-  }
-  </style>
+
+  <!-- Lightbox Script -->
+  <script>
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        const viewer = document.createElement('div');
+        viewer.classList.add('lightbox');
+        viewer.innerHTML = `<img src="${img.src}">`;
+        document.body.appendChild(viewer);
+
+        viewer.addEventListener('click', () => viewer.remove());
+      });
+    });
+  </script>
+
 </body>
 </html>

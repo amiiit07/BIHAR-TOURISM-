@@ -145,6 +145,21 @@ const destinations = [
         image: "/images/kakolat.jpeg"
     }
 ];
+destinations.forEach(d => {
+    d.routeName = d.name
+        .toLowerCase()
+        .trim()
+        .replace(/ /g, "-")
+        .replace(/[()]/g, "")
+        .replace(/,/g, "")
+        .replace(/'/g, "")
+        .replace(/"/g, "")
+        .replace(/\./g, "")
+        .replace(/--+/g, "-");
+});
+
+
+
 
 // ⭐ Seed Function
 async function seedDB() {
@@ -162,5 +177,6 @@ async function seedDB() {
         mongoose.connection.close();
     }
 }
+
 
 seedDB();

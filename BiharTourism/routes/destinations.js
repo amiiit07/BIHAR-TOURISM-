@@ -7,13 +7,32 @@ const Destination = require('../models/Destination');
 router.get('/', async (req, res) => {
     try {
         const destinations = await Destination.find();
-
-        // Debug to confirm DB result
-        console.log("DESTINATIONS FROM DB:", destinations);
-
         res.render('destination', { destinations });
     } catch (err) {
         console.log("Error fetching destinations:", err);
+        res.status(500).send("Server Error");
+    }
+});
+
+
+// ⭐⭐ NEW — View Details (RouteName Based)
+// ⭐ IMPORTANT: Now each destination will open its OWN EJS file
+router.get('/:routeName', async (req, res) => {
+    try {
+        const destination = await Destination.findOne({
+            routeName: req.params.routeName
+        });
+
+        if (!destination) {
+            return res.status(404).send("Destination Not Found");
+        }
+
+        // 👇 This renders a unique page for each destination
+        // Example: views/destinations/mahavir-mandir-patna.ejs
+        res.render(`destinations/${destination.routeName}`, { destination });
+
+    } catch (err) {
+        console.error("View details error:", err);
         res.status(500).send("Server Error");
     }
 });
@@ -39,8 +58,10 @@ router.get('/admin/new', (req, res) => {
 
 // ⬅️ ADMIN — Create New Destination
 router.post('/', async (req, res) => {
-    const { name, description, image, price } = req.body;
-    await Destination.create({ name, description, image, price });
+    const { name, description, image, price, routeName } = req.body;
+
+    await Destination.create({ name, description, image, price, routeName });
+
     res.redirect('/destinations/admin');
 });
 
@@ -56,8 +77,16 @@ router.get('/admin/:id/edit', async (req, res) => {
 // ⬅️ ADMIN — Update Destination
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { name, description, image, price } = req.body;
-    await Destination.findByIdAndUpdate(id, { name, description, image, price });
+    const { name, description, image, price, routeName } = req.body;
+
+    await Destination.findByIdAndUpdate(id, {
+        name,
+        description,
+        image,
+        price,
+        routeName
+    });
+
     res.redirect('/destinations/admin');
 });
 
