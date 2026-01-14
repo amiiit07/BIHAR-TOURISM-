@@ -200,14 +200,18 @@ html {
 /*BIHAR MEANS HEAVEN SECTION STYLES*/
 /* HERO SECTION BACKGROUND */
 .hero-container {
-    height: 80vh;
-    display: flex;
+    min-height: 80vh;   /* Fix 1 */
+    height: auto;       /* Fix 2 */
+    background: url('/images/bg-bihar.jpg') center/cover no-repeat; /* Fix 3 (remove fixed) */
+    background-attachment: scroll;  /* Fix 4 */
     justify-content: center;
     align-items: center;
-    background: url('/images/bg-bihar.jpg') center/cover fixed no-repeat;
     position: relative;
-    padding: 20px;
+    padding: 120px;
+    padding-left: 260px;
+    
 }
+
 
 .hero-container::after {
     content: "";
@@ -687,4 +691,41 @@ html {
         padding: 28px;
     }
 }
+
+
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.blog-card {
+    width: 320px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card h2 {
+    margin: 15px;
+    font-size: 1.4rem;
+}
+
+.read-btn {
+    display: block;
+    margin: 10px 15px 15px;
+    color: #ff0084;
+    font-weight: 600;
+}
+
 

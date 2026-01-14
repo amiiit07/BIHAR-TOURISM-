@@ -21,6 +21,8 @@ const cmRoute = require('./routes/cm');
 const welcomeRoutes = require('./routes/welcome');
 const safetyRoutes = require('./routes/safety');
 const seedRoute = require("./routes/seed");
+const blogRoutes = require("./routes/blog");
+
 
 
 // ------------------- MIDDLEWARE -------------------
@@ -73,6 +75,7 @@ app.use('/cm', cmRoute);
 app.use('/welcome', welcomeRoutes);
 app.use('/safety', safetyRoutes);
 //app.use("/", seedRoute);
+app.use("/blog", blogRoutes);
 
 // ❌ REMOVE old mahavirmandir route
 // app.use('/mahavir-mandir-patna', mahavirmandirRoutes);

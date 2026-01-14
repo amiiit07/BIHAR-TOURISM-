@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bihar Tourism Blogs</title>
+    <meta name="description" content="Explore tourism blogs on food, culture, places, and adventures in Bihar">
+</head>
+
+<body>
+    <h1 class="blog-title">Latest Bihar Tourism Blogs</h1>
+
+    <div class="blog-container">
+        <% blogs.forEach(blog => { %>
+
+        <div class="blog-card">
+            <img src="<%= blog.image %>" alt="blog-image">
+
+            <h2><a href="/blog/<%= blog.slug %>"><%= blog.title %></a></h2>
+
+            <p class="blog-date">Posted on <%= blog.createdAt.toDateString() %></p>
+
+            <div class="blog-tags">
+                <% blog.tags.forEach(tag => { %>
+                    <span>#<%= tag %></span>
+                <% }) %>
+            </div>
+
+            <a href="/blog/<%= blog.slug %>" class="read-btn">Read More →</a>
+        </div>
+
+        <% }) %>
+    </div>
+</body>
+</html>

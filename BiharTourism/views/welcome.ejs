@@ -4,6 +4,9 @@
   <title>Welcome to Bihar</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 
   <style>
     body {
@@ -159,6 +162,7 @@
   </div>
 
 
+
   <!-- ---------------- PHOTO GALLERY START ---------------- -->
   <section class="photo-gallery">
       <h2 class="gallery-title">📸 Glimpses of Bihar</h2>
@@ -194,6 +198,9 @@
   <!-- ---------------- PHOTO GALLERY END ---------------- -->
 
 
+  <! -----map container----- >
+<div id="biharMap" style="height: 500px; width: 100%; border-radius: 12px; margin-top: 30px;"></div>
+
   <!-- Footer -->
   <%- include("partials/footer") %>
 
@@ -211,6 +218,45 @@
         viewer.addEventListener('click', () => viewer.remove());
       });
     });
+
+
+// Bihar center location
+const map = L.map('biharMap').setView([25.0961, 85.3131], 7);
+
+// Base map tiles
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+}).addTo(map);
+
+// Bihar Districts (Example GeoJSON)
+const districts = {
+    "Patna": { lat: 25.6, lng: 85.1, places: ["Golghar", "Patna Sahib", "Eco Park"] },
+    "Gaya": { lat: 24.78, lng: 85.0, places: ["Mahabodhi Temple", "Dungeshwari Hills"] },
+    "Nalanda": { lat: 25.135, lng: 85.45, places: ["Rajgir Ropeway", "Glass Bridge"] },
+    "Madhubani": { lat: 26.36, lng: 86.06, places: ["Mithila Painting Village"] },
+    "Darbhanga": { lat: 26.15, lng: 85.89, places: ["Darbhanga Fort"] },
+    "Bhagalpur": { lat: 25.25, lng: 86.98, places: ["Vikramshila University"] },
+};
+
+// Add markers for each district
+Object.keys(districts).forEach(dist => {
+    let d = districts[dist];
+
+    L.marker([d.lat, d.lng])
+        .addTo(map)
+        .bindPopup(`
+            <h3>${dist}</h3>
+            <strong>Famous Places:</strong>
+            <ul>${d.places.map(p => `<li>${p}</li>`).join('')}</ul>
+            <a href="/places?district=${dist}" style="color:blue;text-decoration:underline;">
+                View More →
+            </a>
+        `);
+});
+
+
+
+
   </script>
 
 </body>
